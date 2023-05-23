@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  /* ## Colors */
+
+  /* ### Primary */
+
+  --soft_blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+
+  /* ### Neutral */
+
+  --very_dark_blue_body: hsl(217, 54%, 11%);
+  --very_dark_blue_card: hsl(216, 50%, 16%);
+  --very_dark_blue_line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+@font-face {
+  font-family: outfit;
+  src: url(../font/Outfit-Regular.ttf);
+}
+
+body {
+  font-family: outfit;
+  background-color: var(--very_dark_blue_body);
+  display: grid;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.card {
+  background-color: var(--very_dark_blue_card);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Equilibrium image */
+.eq-img {
+  width: 100%;
+  height: calc(100% / 2);
+  border-radius: 10px;
+  position: relative;
+}
+
+.eq-img-container {
+  position: relative;
+  margin-bottom: 10px;
+}
+.view-img {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  color: var(--cyan);
+  visibility: hidden;
+}
+.eq-img-container:hover > .view-img {
+  visibility: visible;
+}
+.eq-img-container:hover::after {
+  content: "";
+  background-color: var(--cyan);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  cursor: pointer;
+  border-radius: 8px;
+}
+h2 {
+  color: var(--white);
+  margin: 10px 0;
+}
+
+h2:hover {
+  cursor: pointer;
+  color: var(--cyan);
+}
+p {
+  color: var(--soft_blue);
+}
+.price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 0;
+  position: relative;
+  font-size: 18px;
+}
+.coin-price {
+  color: var(--cyan);
+  letter-spacing: 2px;
+}
+.time {
+  position: absolute;
+  right: 0;
+}
+.av-img {
+  padding: 10px 0;
+  width: 50px;
+  position: relative;
+}
+
+.av-img-container {
+  position: relative;
+  top: -5px;
+  width: 50px;
+  height: 50px;
+}
+
+.av-img-container::before {
+  content: "";
+  position: absolute;
+  border: 2px solid var(--white);
+  width: 50px;
+  height: 50px;
+  top: 9px;
+  left: -1px;
+  border-radius: 50%;
+}
+
+hr {
+  background-color: var(--very_dark_blue_line);
+  margin: 15px 0;
+  border: none;
+  width: 100%;
+  height: 1px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.footer span {
+  color: var(--white);
+  text-transform: capitalize;
+  margin: 0 1px;
+}
+
+.footer span:hover {
+  color: var(--cyan);
+  cursor: pointer;
+}
